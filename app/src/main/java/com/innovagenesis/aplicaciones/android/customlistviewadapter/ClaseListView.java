@@ -25,8 +25,9 @@ public class ClaseListView extends Fragment {
 
         View view =  inflater.inflate(R.layout.fragment_list_view, container, false);
 
-        /***/
-
+        /** hay que tener en cuenta que un fragmento representa pues como su nombre lo dice
+         * y valga la redundancia un fragmento de la pantalla pero la activity sigue siendo
+         * la que rige el control de esa pantalla */
 
 
         final String[] titulos = getActivity().getResources().getStringArray(R.array.horario_de_clases); //Realiza la captura de los titulos
