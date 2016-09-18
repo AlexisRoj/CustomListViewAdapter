@@ -8,10 +8,11 @@
 
 
     <fragment
+
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:name="com.innovagenesis.aplicaciones.android.customlistviewadapter.ClaseListView"
-        android:id="@+id/fragment"
+        android:id="@+id/contenedor_fragments"
         tools:layout="@layout/fragment_list_view"
         android:layout_weight="9"/>
 
@@ -19,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:name="com.innovagenesis.aplicaciones.android.customlistviewadapter.menu_botones"
-        android:id="@+id/fragment2"
+        android:id="@+id/fragment_botones"
         tools:layout="@layout/fragment_menu_botones"
         android:layout_weight="1"/>
 </LinearLayout>

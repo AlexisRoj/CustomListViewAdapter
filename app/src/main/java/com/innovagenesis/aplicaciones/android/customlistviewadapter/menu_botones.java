@@ -3,6 +3,8 @@ package com.innovagenesis.aplicaciones.android.customlistviewadapter;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +42,7 @@ public class menu_botones extends Fragment implements View.OnClickListener {
         /** Cada boton administra los layout **/
 
         int identificadorBtn = v.getId();
+        Fragment fragment;
 
         switch (identificadorBtn) {
 
@@ -47,16 +50,33 @@ public class menu_botones extends Fragment implements View.OnClickListener {
                 /**                          IMPORTANTE                                          **
                 /** Si usas un Toast en una actividad se usa this, pero si estas en un fragment  **
                  ** se usa getContext                                                            **/
-            
+
+                fragment = new ClaseListView();
+                remplazarFragment(fragment).commit();
                 Toast.makeText(getContext(), "Boton numero 1", Toast.LENGTH_SHORT).show();
                 break;
             }
 
             case R.id.btn2: {
+                fragment = new ClaseSpinner();
+                remplazarFragment(fragment).commit();
                 Toast.makeText(getContext(), "Boton numero 2", Toast.LENGTH_SHORT).show();
                 break;
             }
         }
 
     }
+
+    private FragmentTransaction remplazarFragment(Fragment fragment) {
+
+        /** Cambia los fragments **/
+
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+
+        ft.replace(R.id.contenedor_fragments,fragment);
+        return  ft;
+    }
+
+
 }
