@@ -11,9 +11,9 @@ import android.widget.ArrayAdapter;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class spinner extends Fragment {
+public class ClaseSpinner extends Fragment {
 
-    public spinner() {
+    public ClaseSpinner() {
         // Required empty public constructor
 
     }
@@ -28,7 +28,7 @@ public class spinner extends Fragment {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
                 (getActivity(), R.array.horario_de_clases, android.R.layout.simple_spinner_item);
 
-        return inflater.inflate(R.layout.fragment_spinner2, container, false);
+        return inflater.inflate(R.layout.fragment_spinner, container, false);
     }
 
 }

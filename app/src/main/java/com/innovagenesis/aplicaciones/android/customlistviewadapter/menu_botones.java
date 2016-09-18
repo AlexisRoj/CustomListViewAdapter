@@ -7,10 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
-/**
- * Administra Botones del menu
- */
 public class menu_botones extends Fragment implements View.OnClickListener {
 
     View view;
@@ -19,16 +17,19 @@ public class menu_botones extends Fragment implements View.OnClickListener {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
+        /** Cuando se esta en un fragment se debe crear un objeto de tipo view **
+         ** para que los elementos tengan el contexto coreecto                 **/
 
         view = inflater.inflate(R.layout.fragment_menu_botones, container, false);
 
         Button btn1 = (Button) view.findViewById(R.id.btn1);
+        Button btn2 = (Button) view.findViewById(R.id.btn2);
         btn1.setOnClickListener(this);
+        btn2.setOnClickListener(this);
 
         return view;
     }
@@ -43,7 +44,15 @@ public class menu_botones extends Fragment implements View.OnClickListener {
         switch (identificadorBtn) {
 
             case R.id.btn1: {
+                /**                          IMPORTANTE                                          **
+                /** Si usas un Toast en una actividad se usa this, pero si estas en un fragment  **
+                 ** se usa getContext                                                            **/
+                Toast.makeText(getContext(), "Boton numero 1", Toast.LENGTH_SHORT).show();
+                break;
+            }
 
+            case R.id.btn2: {
+                Toast.makeText(getContext(), "Boton numero 2", Toast.LENGTH_SHORT).show();
                 break;
             }
         }
