@@ -47,6 +47,7 @@ public class menu_botones extends Fragment implements View.OnClickListener {
                 /**                          IMPORTANTE                                          **
                 /** Si usas un Toast en una actividad se usa this, pero si estas en un fragment  **
                  ** se usa getContext                                                            **/
+            
                 Toast.makeText(getContext(), "Boton numero 1", Toast.LENGTH_SHORT).show();
                 break;
             }
